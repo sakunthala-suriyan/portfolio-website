@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakunthala S — Resume | Data Analyst & Power BI Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #09090b;
+      --muted: #52525b;
+      --border: #e4e4e7;
+      --bg: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: #f4f4f5;
+      padding: 2rem 1rem;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+    .resume-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 4px;
+      position: relative;
+    }
+    .action-bar {
+      max-width: 820px;
+      margin: 0 auto 1.25rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid #18181b;
+      background: #18181b;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+    .btn:hover { background: #27272a; }
+    .btn-secondary {
+      background: #ffffff;
+      color: #18181b;
+      border-color: #d4d4d8;
+    }
+    .btn-secondary:hover { background: #f4f4f5; }
+
+    /* Header */
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #000;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .name {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .role-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .contact-line {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .contact-line a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-line a:hover { text-decoration: underline; }
+
+    /* Sections */
+    .section {
+      margin-bottom: 1.15rem;
+    }
+    .section-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #000;
+      padding-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
+      color: #000;
+    }
+
+    /* Skills Table */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 0.35rem;
+      font-size: 12.5px;
+    }
+    .skill-cat {
+      font-weight: 700;
+      color: #000;
+    }
+    .skill-list {
+      color: #27272a;
+    }
+
+    /* Projects & Experience */
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+    }
+    .item-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #000;
+    }
+    .item-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .item-sub {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #27272a;
+      margin-bottom: 0.35rem;
+    }
+    ul.bullets {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    ul.bullets li {
+      margin-bottom: 0.25rem;
+      color: #3f3f46;
+      font-size: 12.5px;
+    }
+
+    /* Certifications Grid */
+    .cert-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem 1rem;
+      font-size: 12px;
+    }
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+    }
+    .cert-name {
+      font-weight: 600;
+      color: #18181b;
+    }
+    .cert-org {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* Print Specifics */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .action-bar { display: none !important; }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="action-bar">
+    <a href="index.html" class="btn btn-secondary">
+      ← Back to Portfolio Website
+    </a>
+    <div style="display: flex; gap: 0.5rem;">
+      <button onclick="window.print()" class="btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+        Print / Save as PDF
+      </button>
+      <a href="https://wa.me/919790156348?text=Hello%20Sakunthala,%20I%20reviewed%20your%20resume" target="_blank" class="btn" style="background: #25d366; border-color: #25d366; color: #000;">
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ATS Resume Document -->
+  <div class="resume-container">
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">SAKUNTHALA S</h1>
+      <div class="role-title">Data Analyst | Power BI Developer</div>
+      <div class="contact-line">
+        <span>+91 9790156348</span>
+        <span>•</span>
+        <a href="mailto:sakunthalasuriyan992@gmail.com">sakunthalasuriyan992@gmail.com</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/sakunthala-suriyan-49112631a" target="_blank">linkedin.com/in/sakunthala-suriyan-49112631a</a>
+        <span>•</span>
+        <a href="https://github.com/sakunthala-suriyan" target="_blank">github.com/sakunthala-suriyan</a>
+        <span>•</span>
+        <span>Salem, Tamil Nadu, India</span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p style="font-size: 12.5px; color: #27272a; text-align: justify;">
+        Data Analyst and Power BI Developer with hands-on experience in Power BI, SQL, Advanced Excel, DAX, and Power Query. Skilled in building interactive dashboards, KPI reporting, and business intelligence solutions that turn raw data into actionable insights. Certified in Data Visualization, Data Analytics Essentials, and Python fundamentals, adding a broader analytics and automation edge to reporting workflows. Seeking to bring strong analytical and visualization skills to a data-driven team.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-cat">BI &amp; Visualization:</div>
+        <div class="skill-list">Power BI, Data Modeling, Data Visualization, Interactive Dashboards, Dashboard Development, Tableau</div>
+
+        <div class="skill-cat">Data &amp; Query:</div>
+        <div class="skill-list">SQL, DAX, Power Query, ETL, Data Cleaning, Data Transformation, Data Validation</div>
+
+        <div class="skill-cat">Analysis &amp; Reporting:</div>
+        <div class="skill-list">KPI Reporting, Business Intelligence, Reporting &amp; Analytics, Trend Analysis, Data Interpretation</div>
+
+        <div class="skill-cat">Programming:</div>
+        <div class="skill-list">Python (fundamentals)</div>
+
+        <div class="skill-cat">Tools:</div>
+        <div class="skill-list">Microsoft Excel (Advanced), Microsoft Office Suite, Adobe Experience Manager (AEM)</div>
+
+        <div class="skill-cat">Emerging Tech:</div>
+        <div class="skill-list">Generative AI, Microsoft Copilot, Responsible AI</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2 class="section-title">Key Projects</h2>
+
+      <div style="margin-bottom: 0.65rem;">
+        <div class="item-header">
+          <span class="item-title">E-Commerce Sales Dashboard</span>
+          <span class="item-meta">Power BI | DAX | Star Schema</span>
+        </div>
+        <ul class="bullets">
+          <li>Built an interactive Power BI dashboard analyzing $1.79M in sales across Shopify, eBay, and Amazon.</li>
+          <li>Tracked KPIs including gross profit ($588.35K), profit margin (32.84%), and units sold (6,490), with visuals for sales by category and platform.</li>
+          <li>Mapped global sales distribution and country-wise performance; analyzed monthly sales and profit trends to surface top-selling products (Headphones $254K, Laptops $235K).</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 0.65rem;">
+        <div class="item-header">
+          <span class="item-title">HR Analytics &amp; Workforce Attrition Dashboard</span>
+          <span class="item-meta">Power BI | DAX | HR Diagnostics</span>
+        </div>
+        <ul class="bullets">
+          <li>Built an interactive Power BI dashboard using DAX to analyze employee attrition and workforce trends across department, gender, job role, salary slab, and tenure.</li>
+          <li>Designed KPI visuals covering total employees (1,417), active employees (1,186), attrition count (231), attrition rate (16.3%), and average age (37).</li>
+          <li>Surfaced core retention insight: Administration &amp; Sales account for 59% of corporate attrition (136/231 exits), enabling targeted retention strategies.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 0.65rem;">
+        <div class="item-header">
+          <span class="item-title">EV Market and Charging Infrastructure Dashboard</span>
+          <span class="item-meta">Power BI | Geospatial Analytics</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed a Power BI dashboard analyzing electric vehicle sales trends, market share, and charging station distribution across Indian states.</li>
+          <li>Built KPI visuals covering total EV sales, revenue (₹27bn), charging sessions (658K), and energy consumed (6.93M kWh).</li>
+          <li>Used DAX measures and Power Query to clean and model EV infrastructure data, surfacing South India adoption leadership (Karnataka, Tamil Nadu, Kerala).</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="item-header">
+          <span class="item-title">PhonePe Digital Payment Insights — Powering Bharat</span>
+          <span class="item-meta">Power BI | FinTech Analytics</span>
+        </div>
+        <ul class="bullets">
+          <li>Analyzed ₹3.47bn transaction volume across 300K transactions and 108K users with a 96.00% gateway success rate.</li>
+          <li>Discovered 71.6% weekday traffic surge and identified Digital Loans as the dominant revenue value stream (~₹2.53bn).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="item-header">
+        <span class="item-title">Associate Engineer – Technology (AEM)</span>
+        <span class="item-meta">Jul 2024 – Jan 2025</span>
+      </div>
+      <div class="item-sub">Verticurl (A WPP Company) • Coimbatore, Tamil Nadu</div>
+      <ul class="bullets">
+        <li>Developed and maintained web pages using Adobe Experience Manager (AEM), ensuring content accuracy and consistency.</li>
+        <li>Collaborated with cross-functional teams (design, content, QA) to deliver web updates on schedule.</li>
+        <li>Identified and resolved performance and quality issues, improving page reliability and load consistency.</li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+      <h2 class="section-title">Certifications (2026)</h2>
+      <div class="cert-list">
+        <div class="cert-item"><span class="cert-name">Microsoft Power BI Desktop for BI</span><span class="cert-org">Udemy</span></div>
+        <div class="cert-item"><span class="cert-name">The Complete SQL Bootcamp: Zero to Hero</span><span class="cert-org">Udemy</span></div>
+        <div class="cert-item"><span class="cert-name">Tableau Essential Training</span><span class="cert-org">LinkedIn Learning</span></div>
+        <div class="cert-item"><span class="cert-name">Microsoft Excel: Beginner to Advanced</span><span class="cert-org">Udemy</span></div>
+        <div class="cert-item"><span class="cert-name">Data Visualization &amp; Communication</span><span class="cert-org">IBM SkillsBuild</span></div>
+        <div class="cert-item"><span class="cert-name">Data Analytics Essentials</span><span class="cert-org">Cisco Academy</span></div>
+        <div class="cert-item"><span class="cert-name">Career Skills in Data Analytics</span><span class="cert-org">LinkedIn Learning</span></div>
+        <div class="cert-item"><span class="cert-name">Python Essentials 1</span><span class="cert-org">Cisco &amp; OpenEDG</span></div>
+        <div class="cert-item"><span class="cert-name">Data Analytics Job Simulation</span><span class="cert-org">Deloitte (Forage)</span></div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education &amp; Academic Honors</h2>
+      <div style="margin-bottom: 0.4rem;">
+        <div class="item-header">
+          <span class="item-title">Master of Philosophy (Commerce) — 86.61%</span>
+          <span class="item-meta">Periyar University (2018)</span>
+        </div>
+        <div style="font-size: 12px; font-weight: 700; color: #000;">🥉 University 3rd Rank Holder</div>
+      </div>
+
+      <div style="margin-bottom: 0.4rem;">
+        <div class="item-header">
+          <span class="item-title">Master of Commerce (Computer Applications) — 75.75%</span>
+          <span class="item-meta">Periyar University (2016)</span>
+        </div>
+        <div style="font-size: 12px; font-weight: 700; color: #000;">🥇 Gold Medalist</div>
+      </div>
+
+      <div>
+        <div class="item-header">
+          <span class="item-title">Bachelor of Commerce (Computer Applications) — 72.79%</span>
+          <span class="item-meta">Periyar University (2014)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section" style="margin-bottom: 0;">
+      <h2 class="section-title">Languages</h2>
+      <p style="font-size: 12.5px; color: #27272a;">Tamil (Native) • English (Professional Working) • Hindi (Conversational)</p>
+    </section>
+
+  </div>
+
+</body>
+</html>
